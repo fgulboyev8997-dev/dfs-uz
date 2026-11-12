@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import hero from "@/assets/hero-face.jpg";
+import { useState, lazy, Suspense } from "react";
+import { ClientOnly } from "@tanstack/react-router";
+const HeroScene = lazy(() => import("@/components/HeroScene"));
 import { useLang, LANGS, type Lang, dict } from "@/lib/i18n";
 
 type T = (typeof dict)["uz"];
@@ -108,7 +109,7 @@ function Index() {
               <div><p className="text-3xl font-extrabold text-gradient">24/7</p><p className="text-xs text-muted-foreground">{t.stats[2]}</p></div>
             </div>
           </div>
-          <div className="glass rounded-[2rem] p-2 transition duration-700 hover:rotate-0 md:rotate-2"><img src={hero} alt={t.heroAlt} width={1280} height={960} className="rounded-[1.6rem]" /></div>
+          <div className="glass aspect-square w-full cursor-grab rounded-[2rem] active:cursor-grabbing" aria-label={t.heroAlt}><ClientOnly><Suspense fallback={null}><HeroScene /></Suspense></ClientOnly></div>
         </div>
       </section>
 
