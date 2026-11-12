@@ -1,5 +1,5 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, MeshTransmissionMaterial, Environment, OrbitControls } from "@react-three/drei";
+import { Float, Environment, OrbitControls } from "@react-three/drei";
 import { useRef } from "react";
 import type { Mesh } from "three";
 
@@ -10,7 +10,7 @@ function Core() {
     <Float speed={2} rotationIntensity={0.6} floatIntensity={1.2}>
       <mesh ref={ref}>
         <torusKnotGeometry args={[1, 0.36, 220, 32]} />
-        <MeshTransmissionMaterial thickness={0.8} roughness={0.05} chromaticAberration={0.6} anisotropy={0.3} ior={1.4} color="#cfe3ff" />
+        <meshPhysicalMaterial color="#9cc4ff" roughness={0.08} metalness={0.1} clearcoat={1} clearcoatRoughness={0.05} iridescence={1} iridescenceIOR={1.3} transparent opacity={0.85} />
       </mesh>
       <mesh scale={0.45}>
         <icosahedronGeometry args={[1, 1]} />
@@ -22,8 +22,8 @@ function Core() {
 
 export default function HeroScene() {
   return (
-    <Canvas camera={{ position: [0, 0, 4.2], fov: 45 }} dpr={[1, 2]} gl={{ alpha: true, antialias: true }}>
-      <ambientLight intensity={0.6} />
+    <Canvas camera={{ position: [0, 0, 5.2], fov: 45 }} dpr={[1, 2]} gl={{ alpha: true, antialias: true }}>
+      <ambientLight intensity={1.2} />
       <directionalLight position={[3, 4, 5]} intensity={1.5} />
       <Core />
       <Environment preset="city" />
