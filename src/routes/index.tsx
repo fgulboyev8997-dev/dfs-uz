@@ -83,8 +83,9 @@ function Index() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-background text-foreground">
       <div aria-hidden className="pointer-events-none fixed inset-0 -z-0"><div className="blob left-[-10%] top-[-10%] h-[40rem] w-[40rem] bg-blob-1" /><div className="blob right-[-10%] top-[20%] h-[34rem] w-[34rem] bg-blob-2 [animation-delay:-6s]" /><div className="blob bottom-[-15%] left-[30%] h-[36rem] w-[36rem] bg-blob-3 [animation-delay:-12s]" /></div>
-      <div className="relative">
-      <header className="glass sticky top-3 z-20 mx-3 mt-3 flex max-w-5xl items-center justify-between gap-2 rounded-full px-4 py-2 sm:mx-auto sm:top-4 sm:mt-4 sm:px-5 sm:py-2.5">
+      <div aria-hidden className="top-fade pointer-events-none fixed inset-x-0 top-0 z-10 h-24 sm:h-28" />
+      <div className="relative pt-16 sm:pt-20">
+      <header className="glass fixed inset-x-3 top-3 z-20 mx-auto flex max-w-5xl items-center justify-between gap-2 rounded-full px-4 py-2 sm:top-4 sm:px-5 sm:py-2.5">
         <span className="font-display text-xl font-bold"><span className="text-gradient">●</span> DFS <span className="hidden text-sm font-normal text-muted-foreground sm:inline">DeepFake Security</span></span>
         <div className="flex items-center gap-3">
           <div className="liquid-btn flex rounded-full p-1 text-xs font-semibold">
