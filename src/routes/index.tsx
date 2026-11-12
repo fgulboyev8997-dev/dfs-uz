@@ -68,7 +68,7 @@ function Demo({ t }: { t: T }) {
             <p className={`mt-2 font-display text-4xl font-bold ${s.fake ? "text-danger" : "text-signal"}`}>{s.fake ? t.fake : t.real}</p>
             <div className="mt-4 h-2 rounded bg-secondary"><div className={`h-2 rounded ${s.fake ? "bg-danger" : "bg-signal"}`} style={{ width: `${s.score}%` }} /></div>
             <p className="mt-1 text-sm text-muted-foreground">{t.prob}: {s.score}%</p>
-            <ul className="mt-4 space-y-1 text-sm">{t.samples[sel!].notes.map(n => <li key={n}>• {n}</li>)}</ul>
+            <ul className="mt-4 space-y-1 text-sm">{(t.samples[sel ?? 0]?.notes ?? []).map(n => <li key={n}>• {n}</li>)}</ul>
           </div>
         )}
       </div>
