@@ -110,7 +110,7 @@ function Index() {
               <div><p className="text-2xl font-extrabold text-gradient sm:text-3xl">24/7</p><p className="text-xs text-muted-foreground">{t.stats[2]}</p></div>
             </div>
           </div>
-          <div className="glass mx-auto aspect-square w-full max-w-[22rem] cursor-grab md:max-w-none rounded-[2rem] active:cursor-grabbing" aria-label={t.heroAlt}><ClientOnly><Suspense fallback={null}><HeroScene /></Suspense></ClientOnly></div>
+          <div className="relative mx-auto aspect-square w-full max-w-[22rem] cursor-grab md:max-w-none active:cursor-grabbing" aria-label={t.heroAlt}><div aria-hidden className="absolute inset-[12%] rounded-full bg-primary/20 blur-3xl" /><ClientOnly><Suspense fallback={null}><HeroScene /></Suspense></ClientOnly></div>
         </div>
       </section>
 
