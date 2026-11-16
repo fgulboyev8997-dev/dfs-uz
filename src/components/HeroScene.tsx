@@ -76,7 +76,7 @@ function Shield() {
           <mesh position={[0, -0.2, 0.1]}><boxGeometry args={[0.035, 0.12, 0.01]} /><meshStandardMaterial color="#2f6bff" emissive="#4f8cff" emissiveIntensity={2} /></mesh>
         </group>
         {/* rivets */}
-        {[[-0.85, 0.95], [0.85, 0.95], [-0.7, -0.45], [0.7, -0.45], [0, -1.2]].map(([x, y], i) => (
+        {([[-0.85, 0.95], [0.85, 0.95], [-0.7, -0.45], [0.7, -0.45], [0, -1.2]] as [number, number][]).map(([x, y], i) => (
           <mesh key={i} position={[x, y, 0.2]}><sphereGeometry args={[0.04, 16, 16]} /><meshStandardMaterial color="#ffffff" metalness={1} roughness={0.1} /></mesh>
         ))}
       </group>
